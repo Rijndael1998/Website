@@ -9,6 +9,7 @@ generateODF = True
 try:
     from odf import opendocument, text
 except ModuleNotFoundError:
+    generateODF = False
     localLogger.error("ODF documents will not be processed. Errors will occur if the program comes across such file")
     localLogger.error("Please install odfpy. Instructions: https://pypi.org/project/odfpy/")
 
