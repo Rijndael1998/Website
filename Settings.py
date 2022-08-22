@@ -12,11 +12,11 @@ class Generation:
     publicFileImageLocation = "Resources/PageImages/document-text-sharp.svg"
     publicBackImageLocation = "Resources/PageImages/arrow-back-sharp.svg"
 
-    buildLocation = "/var/www/localhost/htdocs/"
+    buildLocation = "PublicAccess/"
 
-    MainPage = buildLocation + "chicken.html"
+    MainPage = buildLocation + "index.html"
     MinimumPage = buildLocation + "bare.html"
-    DownloadPage = buildLocation + "down.html"
+    DownloadPage = buildLocation + "lukasz-baldyga.html"
 
 
 class Verification:  # Replace with flags
