@@ -30,4 +30,4 @@ class Behavior:
     autoOpenSection = "Welcome"  # What section to automatically open upon load
 
 class Cache:
-    maxAge = 5
+    maxAge = 7

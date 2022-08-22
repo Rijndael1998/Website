@@ -12,14 +12,14 @@ def getTextFile(path):
 
 
 localLogger.debug("init cache")
-cache = sqlite3.connect("Cache/Cache.db")
+cache = sqlite3.connect("Cache/_Cache.db")
 cacheCursor = cache.cursor()
 
 # SQL
-cacheInit = getTextFile("Cache/_init.sql")
-cacheGet = getTextFile("Cache/_get.sql")
-cacheAdd = getTextFile("Cache/_add.sql")
-cacheRem = getTextFile("Cache/_rem.sql")
+cacheInit = getTextFile("Cache/init.sql")
+cacheGet = getTextFile("Cache/get.sql")
+cacheAdd = getTextFile("Cache/add.sql")
+cacheRem = getTextFile("Cache/rem.sql")
 
 cacheCursor.execute(cacheInit)
 
