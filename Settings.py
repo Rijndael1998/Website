@@ -28,3 +28,6 @@ class Verification:  # Replace with flags
 
 class Behavior:
     autoOpenSection = "Welcome"  # What section to automatically open upon load
+
+class Cache:
+    maxAge = 5
