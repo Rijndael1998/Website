@@ -2,4 +2,4 @@ __pycache__
 .idea/
 logs/resourcePackDump.log
 PublicAccess/
-Cache/Cache.db
+Cache/PageGenCache/Cache.db
