@@ -3,27 +3,13 @@ from urllib import request
 import hashlib
 from HelperFunctions import getLogger, Read
 import base64
+from IO import getHTMLContent
 
 localLogger = getLogger()
 
 
 def generateID(text):
     return hashlib.sha512(str(text).encode()).hexdigest()
-
-
-def getHTMLContent(url):
-    localLogger.debug("Getting content from: " + url)
-    InnerHTMLPage = request.urlopen(url)
-    InnerHTML = InnerHTMLPage.read()
-    InnerHTMLPage.close()
-
-    try:
-        InnerHTML = InnerHTML.decode()
-
-    except UnicodeDecodeError:
-        localLogger.warning("Returning bytes, can't decode: '{}' request".format(url))
-
-    return InnerHTML
 
 
 def getIntegrity(data):
