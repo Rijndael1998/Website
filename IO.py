@@ -6,20 +6,25 @@ import Settings
 
 localLogger = getLogger()
 
-def getTextFile(path):
+# Local IO
+def Read(path):
     with open(path) as f:
         return f.read()
+
+def Save(path, text):
+    with open(path, "w") as f:
+        f.write(text)
 
 
 localLogger.debug("init cache")
 cache = sqlite3.connect("Cache/PageGenCache/_Cache.db")
 cacheCursor = cache.cursor()
 
-# SQL
-cacheInit = getTextFile("Cache/PageGenCache/init.sql")
-cacheGet = getTextFile("Cache/PageGenCache/get.sql")
-cacheAdd = getTextFile("Cache/PageGenCache/add.sql")
-cacheRem = getTextFile("Cache/PageGenCache/rem.sql")
+# SQL for cache
+cacheInit = Read("Cache/PageGenCache/init.sql")
+cacheGet = Read("Cache/PageGenCache/get.sql")
+cacheAdd = Read("Cache/PageGenCache/add.sql")
+cacheRem = Read("Cache/PageGenCache/rem.sql")
 
 cacheCursor.execute(cacheInit)
 

@@ -11,11 +11,12 @@ import shutil
 from glob import glob
 
 # Project imports
-import HelperFunctions
+from HelperFunctions import getLogger
+from IO import Save, Read
 import Tags
 import Article
 
-localLogger = HelperFunctions.getLogger()
+localLogger = getLogger()
 
 # remove old log
 try:
@@ -118,8 +119,8 @@ class Page:
     bareHeader = header.format("")
 
     # Increment build number
-    buildNumber = 1 + int(HelperFunctions.Read(Article.Settings.Generation.buildNumberLocation))
-    HelperFunctions.Save(Article.Settings.Generation.buildNumberLocation, str(buildNumber))
+    buildNumber = 1 + int(Read(Article.Settings.Generation.buildNumberLocation))
+    Save(Article.Settings.Generation.buildNumberLocation, str(buildNumber))
 
     localLogger.debug("Current build number: {}".format(buildNumber))
 
@@ -288,9 +289,9 @@ if Article.ModuleManager.generateDownContent:  # Generate content for download
         localLogger.debug("Made URI for '{}' from file in '{}'".format(resourceCache[resource], fileLoc))
         resourceCache[resource] = makeResource
 
-    HelperFunctions.Save("logs/resourcePackDump.log", str(resourceCache))
+    Save("logs/resourcePackDump.log", str(resourceCache))
 
-    resourcePackVarLine = HelperFunctions.Read("PublicResources/Scripts/resourcePackVarTemplate.js")
+    resourcePackVarLine = Read("PublicResources/Scripts/resourcePackVarTemplate.js")
     resourcePackVarLine = resourcePackVarLine.replace("{}", str(resourceCache))
 
     resourcePackVarScript = Tags.HTMLElement("script", selfClosing=False,
@@ -301,11 +302,11 @@ if Article.ModuleManager.generateDownContent:  # Generate content for download
 
 localLogger.info("Finishing building, writing...")
 
-HelperFunctions.Save(Article.Settings.Generation.MinimumPage, bareHTML)
-HelperFunctions.Save(Article.Settings.Generation.MainPage, beefHTML)
+Save(Article.Settings.Generation.MinimumPage, bareHTML)
+Save(Article.Settings.Generation.MainPage, beefHTML)
 
 if Article.ModuleManager.generateDownContent:
-    HelperFunctions.Save(Article.Settings.Generation.DownloadPage, downHTML)
+    Save(Article.Settings.Generation.DownloadPage, downHTML)
 
 localLogger.info("Data written to '{}' folder".format(Article.Settings.Generation.buildLocation))
 

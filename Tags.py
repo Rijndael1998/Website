@@ -1,9 +1,10 @@
-import string
+from HelperFunctions import getLogger
+from IO import getHTMLContent, Read
 from urllib import request
 import hashlib
-from HelperFunctions import getLogger, Read
+import string
 import base64
-from IO import getHTMLContent
+
 
 localLogger = getLogger()
 
