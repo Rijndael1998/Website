@@ -311,25 +311,25 @@ if Article.ModuleManager.generateDownContent:
 localLogger.info("Data written to '{}' folder".format(Article.Settings.Generation.buildLocation))
 
 if Article.Settings.Verification.verify:
-    import html_validate
+    import ValidateHTML
     # Check minimum page
     if Article.Settings.Verification.verifyMinimumPage:
         localLogger.info("Checking bareHTML created code:")
-        html_validate.validateAndLog(bareHTML.encode())
+        ValidateHTML.validateAndLog(bareHTML.encode())
     else:
         localLogger.info("Skipping verification for: bareHTML")
 
     # Check download page
     if Article.ModuleManager.generateDownContent and Article.Settings.Verification.verifyDownloadPage:
         localLogger.info("Checking downHTML created code:")
-        html_validate.validateAndLog(downHTML.encode())
+        ValidateHTML.validateAndLog(downHTML.encode())
     else:
         localLogger.info("Skipping verification for: downHTML")
 
     # Check main page
     if Article.Settings.Verification.verifyMainPage:
         localLogger.info("Checking beefHTML created code:")
-        html_validate.validateAndLog(beefHTML.encode())
+        ValidateHTML.validateAndLog(beefHTML.encode())
     else:
         localLogger.info("Skipping verification for: beefHTML")
 
