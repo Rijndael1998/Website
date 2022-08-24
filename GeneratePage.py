@@ -11,7 +11,7 @@ import shutil
 from glob import glob
 
 # Project imports
-from HelperFunctions import getLogger
+from Logger import getLogger
 from IO import Save, Read
 import Tags
 import Article

@@ -1,4 +1,4 @@
-from HelperFunctions import getLogger
+from Logger import getLogger
 from urllib import request
 from time import time
 import sqlite3

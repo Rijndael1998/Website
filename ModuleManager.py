@@ -1,6 +1,6 @@
-import HelperFunctions
+import Logger
 
-localLogger = HelperFunctions.getLogger()
+localLogger = Logger.getLogger()
 
 # Set variables for generation
 generateDownContent = True

@@ -2,13 +2,13 @@ from glob import glob
 from os import path
 import string
 
-import HelperFunctions
+from Logger import getLogger
 import Errors
 import ModuleManager
 import Tags
 import Settings
 
-localLogger = HelperFunctions.getLogger()
+localLogger = getLogger()
 
 
 class Article:

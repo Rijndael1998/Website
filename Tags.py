@@ -1,4 +1,4 @@
-from HelperFunctions import getLogger
+from Logger import getLogger
 from IO import getHTMLContent, Read
 from urllib import request
 import hashlib
