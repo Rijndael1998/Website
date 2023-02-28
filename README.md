@@ -7,7 +7,7 @@ There is a [to do](TODO.md) list that you can look at which lists things that th
 The program is very simple to use and install. Essentially it's a bunch of scripts that with some external libraries generate the files to be used on the web. 
 
 ### Requirements
-1. [Python](https://www.python.org/). Developed with [Python 3.8.4](https://www.python.org/downloads/release/python-384/) through [Python 3.9.5](https://www.python.org/downloads/release/python-395/) but most likely the [latest version](https://www.python.org/downloads/) will work too.
+1. [Python](https://www.python.org/). Developed with [Python 3.8.4](https://www.python.org/downloads/release/python-384/) through [Python 3.10.9](https://www.python.org/downloads/release/python-3109/) but most likely the [latest version](https://www.python.org/downloads/) will work too.
 
 ### Optionals
 1. [odfpy](https://pypi.org/project/odfpy/) is needed to read the ODF files. Not installing this will result in `.odt` files failing to generate.
