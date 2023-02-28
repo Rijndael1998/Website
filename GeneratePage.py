@@ -129,7 +129,7 @@ class Page:
     buildNumberParagraph += str(Tags.Paragraph("Last updated: " + strftime("%Y-%m-%d %H:%M:%S", gmtime())))
     buildNumberParagraph += str(Tags.HTMLElement("a",
                                                  selfClosing=False,
-                                                 attributes={"href": "https://baldy.ga/down.html", "target": "_blank"},
+                                                 attributes={"href": "https://baldy.ga/{}".format(Article.Settings.Generation.DownloadPage), "target": "_blank"},
                                                  pattributes=["download"],
                                                  innerHTML="Download latest page"))
 
