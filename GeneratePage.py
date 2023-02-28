@@ -76,10 +76,6 @@ class Page:
     header += str(bigTitle)
 
     HeadTags = [
-        Tags.Script(url="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity=True),
-        Tags.Script(url="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", integrity=True),
-        Tags.Style(url="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css"),
-        Tags.Script(url="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js", integrity=True),
         Tags.Style(url="Resources/Styles/style.css", internalPath="PublicResources/Styles/style.css"),
         Tags.Script(url="Resources/Scripts/pageControl.js", integrity=True,
                     internalPath="PublicResources/Scripts/pageControl.js"),
@@ -88,10 +84,6 @@ class Page:
     ]
 
     EmbedHeadTags = [
-        Tags.Script("https://code.jquery.com/jquery-3.5.1.slim.min.js", embed=True),
-        Tags.Script("https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", embed=True),
-        Tags.Style("https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css", embed=True),
-        Tags.Script("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js", embed=True),
         Tags.Style(internalPath="PublicResources/Styles/style.css", embed=True),
         Tags.Style(internalPath="PublicResources/Styles/styleEmbed.css", embed=True),
         Tags.Script(internalPath="PublicResources/Scripts/pageControl.js", embed=True),
